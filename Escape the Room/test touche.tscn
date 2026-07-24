@@ -1,0 +1,313 @@
+[gd_scene format=3 uid="uid://87vyvapwessk"]
+
+[ext_resource type="Script" uid="uid://ckjjraobuclju" path="res://cube.gd" id="1_g2u5f"]
+[ext_resource type="Script" uid="uid://cuv8sd08pn23s" path="res://test_touche.gd" id="1_lsjhu"]
+[ext_resource type="Script" uid="uid://cuqmfjxbird2n" path="res://camera_3d.gd" id="2_7l4dr"]
+[ext_resource type="PackedScene" uid="uid://cs5dvujvs4qx6" path="res://Cle.tscn" id="4_jt7nf"]
+[ext_resource type="AudioStream" uid="uid://dstmkdk041j5u" path="res://son/applause.mp3" id="5_lsjhu"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7l4dr"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_mpaxf"]
+sky_material = SubResource("ProceduralSkyMaterial_7l4dr")
+
+[sub_resource type="Environment" id="Environment_jt7nf"]
+background_mode = 2
+sky = SubResource("Sky_mpaxf")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_edqp4"]
+albedo_color = Color(0, 0.2666664, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_nhjct"]
+material = SubResource("StandardMaterial3D_edqp4")
+size = Vector3(1, 2, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h6j1p"]
+size = Vector3(1, 2, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xshhu"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7l4dr"]
+material = SubResource("StandardMaterial3D_xshhu")
+size = Vector3(22, 7.8, 0.25)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mpaxf"]
+size = Vector3(22, 7.8, 0.25)
+
+[sub_resource type="BoxMesh" id="BoxMesh_jt7nf"]
+material = SubResource("StandardMaterial3D_xshhu")
+size = Vector3(22, 7.8, 0.25)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lsjhu"]
+size = Vector3(22, 7.8, 0.25)
+
+[sub_resource type="BoxMesh" id="BoxMesh_lsjhu"]
+material = SubResource("StandardMaterial3D_xshhu")
+size = Vector3(15, 7.8, 0.25)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uc2cl"]
+size = Vector3(15, 7.8, 0.25)
+
+[sub_resource type="BoxMesh" id="BoxMesh_uc2cl"]
+material = SubResource("StandardMaterial3D_xshhu")
+size = Vector3(15, 7.8, 0.25)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2pmhh"]
+size = Vector3(15, 7.8, 0.25)
+
+[sub_resource type="BoxMesh" id="BoxMesh_2pmhh"]
+material = SubResource("StandardMaterial3D_xshhu")
+size = Vector3(4, 1.8, 0.25)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wonrf"]
+size = Vector3(4, 1.8, 0.25)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2pmhh"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_rth60"]
+material = SubResource("StandardMaterial3D_2pmhh")
+size = Vector3(34, 7.8, 0.25)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rth60"]
+size = Vector3(34, 7.8, 0.25)
+
+[sub_resource type="BoxMesh" id="BoxMesh_xshhu"]
+size = Vector3(22, 0.25, 34)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mpaxf"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7bxi5"]
+size = Vector3(22, 0.25, 34)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uc2cl"]
+albedo_color = Color(0.19232538, 0.6408806, 5.7756904e-07, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7bxi5"]
+material = SubResource("StandardMaterial3D_uc2cl")
+size = Vector3(0.25, 6, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xshhu"]
+size = Vector3(0.25, 6, 4)
+
+[sub_resource type="Animation" id="Animation_jt7nf"]
+resource_name = "OPEN"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 1.5707964, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_lsjhu"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wonrf"]
+_data = {
+&"OPEN": SubResource("Animation_jt7nf"),
+&"RESET": SubResource("Animation_lsjhu")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nhjct"]
+size = Vector3(2, 4, 5)
+
+[node name="Main" type="Node3D" unique_id=1258593874]
+script = ExtResource("1_lsjhu")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=399765634]
+environment = SubResource("Environment_jt7nf")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=204178382]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Player" type="CharacterBody3D" parent="." unique_id=1403276079]
+slide_on_ceiling = false
+script = ExtResource("1_g2u5f")
+
+[node name="PlayerMesh" type="MeshInstance3D" parent="Player" unique_id=669042067]
+mesh = SubResource("BoxMesh_nhjct")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player" unique_id=1437907741]
+shape = SubResource("BoxShape3D_h6j1p")
+
+[node name="Camera3D" type="Camera3D" parent="Player" unique_id=363934824]
+transform = Transform3D(-1, 3.9080593e-08, -1.4585075e-07, 0, 0.9659258, 0.25881907, 1.509958e-07, 0.25881907, -0.9659258, -2.651456e-08, 2, -4)
+script = ExtResource("2_7l4dr")
+
+[node name="Wall_01" type="StaticBody3D" parent="." unique_id=988818830]
+
+[node name="WallMesh" type="MeshInstance3D" parent="Wall_01" unique_id=1253101787]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.025, -16.875)
+mesh = SubResource("BoxMesh_7l4dr")
+
+[node name="WallCollision" type="CollisionShape3D" parent="Wall_01" unique_id=680082309]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.025, -16.875)
+shape = SubResource("BoxShape3D_mpaxf")
+
+[node name="Wall_02" type="StaticBody3D" parent="." unique_id=1136848224]
+
+[node name="WallMesh" type="MeshInstance3D" parent="Wall_02" unique_id=118133564]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.9999999, 0, 0, 0, 0.99999994, 0, 4.025, 16.875)
+mesh = SubResource("BoxMesh_jt7nf")
+
+[node name="WallCollision" type="CollisionShape3D" parent="Wall_02" unique_id=1943527679]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.025, 16.875)
+shape = SubResource("BoxShape3D_lsjhu")
+
+[node name="Wall_03 (porte)2" type="StaticBody3D" parent="." unique_id=2005125456]
+
+[node name="WallMesh" type="MeshInstance3D" parent="Wall_03 (porte)2" unique_id=230869084]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10.875, 4.025, -9.5)
+mesh = SubResource("BoxMesh_lsjhu")
+
+[node name="WallCollision" type="CollisionShape3D" parent="Wall_03 (porte)2" unique_id=570350994]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10.875, 4.025, -9.5)
+shape = SubResource("BoxShape3D_uc2cl")
+
+[node name="Wall_03 (porte)3" type="StaticBody3D" parent="." unique_id=1389195532]
+
+[node name="WallMesh" type="MeshInstance3D" parent="Wall_03 (porte)3" unique_id=1766771465]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10.875, 4.025, 9.5)
+mesh = SubResource("BoxMesh_uc2cl")
+
+[node name="WallCollision" type="CollisionShape3D" parent="Wall_03 (porte)3" unique_id=146993011]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10.875, 4.025, 9.5)
+shape = SubResource("BoxShape3D_2pmhh")
+
+[node name="Wall_03 (porte)4" type="StaticBody3D" parent="." unique_id=1641204200]
+
+[node name="WallMesh" type="MeshInstance3D" parent="Wall_03 (porte)4" unique_id=1396848932]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10.875, 7.025, 0)
+mesh = SubResource("BoxMesh_2pmhh")
+
+[node name="WallCollision" type="CollisionShape3D" parent="Wall_03 (porte)4" unique_id=1875272067]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10.875, 7.025, 0)
+shape = SubResource("BoxShape3D_wonrf")
+
+[node name="Wall_04" type="StaticBody3D" parent="." unique_id=1578084529]
+
+[node name="WallMesh" type="MeshInstance3D" parent="Wall_04" unique_id=176960512]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -10.875, 4.025, 0)
+mesh = SubResource("BoxMesh_rth60")
+
+[node name="WallCollision" type="CollisionShape3D" parent="Wall_04" unique_id=1249691528]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -10.875, 4.025, 0)
+shape = SubResource("BoxShape3D_rth60")
+
+[node name="Floor" type="StaticBody3D" parent="." unique_id=1734775661]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=1707574245]
+mesh = SubResource("BoxMesh_xshhu")
+surface_material_override/0 = SubResource("StandardMaterial3D_mpaxf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=796850390]
+shape = SubResource("BoxShape3D_7bxi5")
+
+[node name="Floor2" type="StaticBody3D" parent="." unique_id=354991542]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor2" unique_id=134559595]
+mesh = SubResource("BoxMesh_xshhu")
+surface_material_override/0 = SubResource("StandardMaterial3D_mpaxf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor2" unique_id=1234293893]
+shape = SubResource("BoxShape3D_7bxi5")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1578313792]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=798448288]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+scale = Vector2(2, 2)
+text = "KEYS : 0/3"
+
+[node name="VictoryScreen" type="ColorRect" parent="CanvasLayer" unique_id=1438728693]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VictoryText" type="Label" parent="CanvasLayer/VictoryScreen" unique_id=1701926736]
+layout_mode = 0
+offset_left = 301.0
+offset_top = 213.0
+offset_right = 876.0
+offset_bottom = 321.0
+theme_override_font_sizes/font_size = 64
+text = "Congratulations !"
+
+[node name="Subtitle" type="Label" parent="CanvasLayer/VictoryScreen" unique_id=54156315]
+layout_mode = 0
+offset_left = 193.0
+offset_top = 396.0
+offset_right = 1185.0
+offset_bottom = 484.0
+theme_override_font_sizes/font_size = 50
+text = "ESCAPE THE ROOM by Alan Take"
+
+[node name="Cles" type="Node3D" parent="." unique_id=1804327829]
+
+[node name="Area3D (Clé)" parent="Cles" unique_id=1714813151 instance=ExtResource("4_jt7nf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.5, 8)
+
+[node name="Area3D (Clé)2" parent="Cles" unique_id=1892886120 instance=ExtResource("4_jt7nf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.5, -4)
+
+[node name="Area3D (Clé)3" parent="Cles" unique_id=1746649670 instance=ExtResource("4_jt7nf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.5, -12)
+
+[node name="PortePivot" type="Node3D" parent="." unique_id=1637647545]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.875, 3.125, -2)
+
+[node name="Porte" type="Node3D" parent="PortePivot" unique_id=1039160944]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PortePivot/Porte" unique_id=1330048355]
+mesh = SubResource("BoxMesh_7bxi5")
+
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="PortePivot/Porte" unique_id=26170046]
+sync_to_physics = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PortePivot/Porte/AnimatableBody3D" unique_id=109107524]
+shape = SubResource("BoxShape3D_xshhu")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PortePivot/Porte" unique_id=1414931087]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_wonrf")
+
+[node name="ExitZone" type="Area3D" parent="." unique_id=430120809]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.875, 2, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ExitZone" unique_id=1699644871]
+shape = SubResource("BoxShape3D_nhjct")
+
+[node name="VictorySound" type="AudioStreamPlayer" parent="." unique_id=1344903399]
+stream = ExtResource("5_lsjhu")
+
+[connection signal="body_entered" from="ExitZone" to="." method="_on_exit_zone_body_entered"]
